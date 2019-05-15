@@ -28,8 +28,7 @@ class Task extends Entity
    */
   private $priority;
 
-  public function __construct($id = 0, $title= "", $description= "", $priority = 0) {
-    $this->id = $id;
+  public function __construct($title= "", $description= "", $priority = 0) {
     $this->title = $title;
     $this->description = $description;
     $this->priority = $priority;
