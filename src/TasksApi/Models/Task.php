@@ -2,11 +2,12 @@
 
 namespace TasksApi\Models;
 
+use TasksApi\Models\Entity;
 /**
  * @Entity
- * @Table(name="tasks")s
+ * @Table(name="tasks")
  */
-class Tasks
+class Task extends Entity
 {
   /**
    * @var integer @Id
@@ -101,6 +102,15 @@ class Tasks
   }
   public function toString() {
     return "  [id:" .$this->id. "]  [title:" .$this->title. "]  [description:" .$this->description. "]  [priority:" .$this->priority. "]  ";
+  }
+
+  public function toArray(){
+    return [
+      "id" => $this->id,
+      "title" => $this->title,
+      "description" => $this->description,
+      "priority" => $this->priority
+    ];
   }
 
 }
