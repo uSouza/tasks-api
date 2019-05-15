@@ -2,11 +2,29 @@
 
 namespace TasksApi\Models;
 
+/**
+ * @Entity
+ * @Table(name="tasks")s
+ */
 class Tasks
 {
+  /**
+   * @var integer @Id
+   *  @Column(name="id", type="integer")
+   *  @GeneratedValue(strategy="AUTO")
+   */
   private $id;
+  /**
+   * @var string @Column(type="string", length=255)
+   */
   private $title;
+  /**
+   * @var string @Column(type="string", length=255)
+   */
   private $description;
+  /**
+   * @var integer @Column(type="integer")
+   */
   private $priority;
 
   public function __construct($id = 0, $title= "", $description= "", $priority = 0) {
